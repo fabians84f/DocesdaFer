@@ -68,6 +68,7 @@ header p {
   width: 50%;
   height: auto;
   border-radius: 10px;
+  max-width: 480px;
 }
 
 .item h3 {
