@@ -92,43 +92,86 @@ body {
       text-align: center;
       margin: 5px 0 10px;
       font-size: 5vw;
-      color: #181617;
+      color: #181516;
     }
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding: 0 20px 40px;
-      font-size: 2vw;
-    }
-
-    .card {
-      background-color: #f8d9eebe;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 250px;
-      overflow: hidden;
-      text-align: center;
-      font-size: 2vw;
-    }
-
-    .card img {
+    
+    article {
+      margin: 0;
+      padding: 0;
       width: 100%;
-      height: 250px;
-      object-fit: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+     
+    .slider {
+      margin: 0 auto;
+      width: 500px;
+      height: 300px;
+      overflow: hidden;
     }
 
-    .card h3 {
-      margin: 10px 0;
-      color: #010c0c;
-      font-family: sans-serif;
+    .slides {
+      width: 80%;
+      height: 100%;
+      display: flex;
     }
 
-    .card p {
-      padding: 0 10px 10px;
-      font-size: 0.95em;
+    .slides input {
+      display: none;
+    }
+
+    .slide {
+      width: 20%;
+      position: relative;
+    }
+
+    .slide img {
+      width: 600px;
+    }
+
+    .manual-navigation {
+      position: absolute;
+      width: 500px;
+      margin-top: -30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .manual-btn {
+      border: 2px solid rgb(26, 24, 24);
+      padding: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 1s;
+    }
+
+    .manual-btn:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    .manual-btn:hover {
+      background-color: white;
+    }
+
+    #radio1:checked ~ .first {
+      margin-left: 0;
+    }
+
+    #radio2:checked ~.first {
+      margin-left: -20%;
+    }
+
+    #radio3:checked ~.first {
+      margin-left: -25%;
+    }
+
+    #radio4:checked ~.first {
+      margin-left: -75%;
     }
 
     footer {
