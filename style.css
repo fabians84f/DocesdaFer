@@ -30,13 +30,13 @@ body {
 
     header > h1 {
       font-variant: normal;
-      font-size: 4em;
+      font-size: 5vw;
       font-weight: normal;
     }
 
     header > p {
       font-family:Arial, Helvetica, sans-serif;
-      font-size: 1.2em;
+      font-size: 2.5vw;
     }
 
     header {
@@ -83,7 +83,7 @@ body {
       align-items: center;
       justify-content: center;
       color: #22e5f38c;
-      font-size: 2em;
+      font-size: 2vw;
       font-weight: bold;
       text-shadow: 2px 2px 5px #000;
     }
@@ -91,7 +91,7 @@ body {
     .section-title {
       text-align: center;
       margin: 5px 0 10px;
-      font-size: 3em;
+      font-size: 5vw;
       color: #181617;
     }
 
@@ -101,6 +101,7 @@ body {
       justify-content: center;
       gap: 30px;
       padding: 0 20px 40px;
+      font-size: 2vw;
     }
 
     .card {
@@ -110,6 +111,7 @@ body {
       width: 250px;
       overflow: hidden;
       text-align: center;
+      font-size: 2vw;
     }
 
     .card img {
