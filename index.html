@@ -24,35 +24,72 @@
     <img src="imagens/Logo Doces da Fer com Brigadeiroredondo200.png" alt="Doces da Fer">
    </div>
 
+  <main>
   <h2 class="section-title"><ins>Nossas Especialidades</ins></h2>
 
-  <article>
-   <span class="material-symbols-outlined btn">arrow_forward_ios
-</span>
-  <div class="slider">
-
-    <div class="slides">
-      <img src="imagens/bolobrigadeironinho.jpg" alt="imagem1">
-    </div>
-
-    <div class="slide">
-      <img src="imagens/bolo2amoresmorango1.jpg" alt="imagem2">
-    </div>
-
-    <div class="slide">
-       <img src="imagens/boloninho.jpg" alt="imagem4">
-    </div>
-
-    <div class="dots">
-    </div>
-     <span class="material-symbols-outlined btn">arrow_forward_ios
-</span>   
-  </article>
+  <section class="slider">
+      <div class="slides">
+        <img src="imagens/bolo2amoresmorango1.jpg" alt="Bolo 1">
+        <img src="imagens/bolobrigadeironinho.jpg" alt="Bolo 2">
+        <img src="imagens/boloninho.jpg" alt="Bolo 3">
+        <img src="imagens/bolo2amoresmorango1.jpg" alt="Bolo 4">
+      </div>
+      <button class="btn prev">&#10094;</button>
+      <button class="btn next">&#10095;</button>
+      <div class="dots"></div>
+    </section>
+    </main>
 
   <footer>
     <p>📍 Curitiba, PR | 📞 (41) 99789-4596 | 📷 Instagram: @Docesfer_</p>
     <p>&copy; 2025 Doces da Fer. Todos os direitos reservados.</p>
   </footer>
+  <script>
+    const slides = document.querySelector('section.slider .slides');
+    const images = document.querySelectorAll('section.slider .slides img');
+    const prevBtn = document.querySelector('section.slider .prev');
+    const nextBtn = document.querySelector('section.slider .next');
+    const dotsContainer = document.querySelector('section.slider .dots');
 
+    let index = 0;
+
+    // Criar bolinhas de navegação
+    images.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('section.slider .dot');
+
+    function showSlide() {
+      slides.style.transform = `translateX(${-index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      index = (index + 1) % images.length;
+      showSlide();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + images.length) % images.length;
+      showSlide();
+    }
+
+    function goToSlide(i) {
+      index = i;
+      showSlide();
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Troca automática a cada 4 segundos
+    setInterval(nextSlide, 4000);
+  </script>
 </body>
 </html>
