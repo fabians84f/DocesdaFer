@@ -112,8 +112,12 @@ body {
     text-align: center;
 }
 
-
-
+.photo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
 .photo-item {
     width: 240px;
