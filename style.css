@@ -112,12 +112,8 @@ body {
     text-align: center;
 }
 
-.photo-grid {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+
+
 
 .photo-item {
     width: 240px;
@@ -126,8 +122,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-
 }
+
 
 .photo-item:hover {
     transform: scale(1.05);
