@@ -170,7 +170,7 @@ body {
     gap: 15px; /* Espaço entre as imagens */
 }
 
-.imagem-doce {
+.photo-item {
     width: 100%; /* Ocupa 100% da largura do contêiner */
     max-width: 400px; /* Largura máxima para não esticar muito */
     height: auto;
@@ -186,7 +186,7 @@ body {
         align-items: flex-start; /* Alinha os itens pelo topo, se houver diferença de altura */
     }
 
-    .imagem-doce {
+    .photo-item {
         width: 30%; /* Cada imagem ocupa 30% da largura, deixando 10% para o espaçamento */
         max-width: none; /* Remove a largura máxima para que elas possam encolher */
     }
