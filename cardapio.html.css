@@ -1,102 +1,155 @@
 @charset "UTF-8";
 
+/* Paleta de Cores e Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: 'Times New Roman', Times, serif;
-  margin: 0;
-  padding: 0;
-  background: #f7d0eaa8;
-  color: #333;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #D0E7E7; /* Cor de fundo do logo */
 }
 
-/* Cabeçalho */
-header {
-  text-align: center;
-  background: #22e5f38c;
-  color: rgb(24, 2, 2);
-  padding: 30px;
+/* --- Cabeçalho (Estilos da página inicial) --- */
+.main-header {
+    background-color: #F0E6D2; /* Cor bege do logo */
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-header h1 {
-  margin: 10px;
-  font-size: 2.4rem;
+.header-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
-header p {
-  margin: 5px ;
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
 }
 
-.categoria {
-  margin: 40px auto;
-  max-width: 1200px;
-  padding: auto;
+.logo-center {
+    width: 80px;
+    height: auto;
 }
 
-.categoria h2 {
-  text-align: center;
-  font-size: 2em;
-  color: #131111;
+.site-title {
+    font-size: 2rem;
+    color: #333333;
+    margin-top: 5px;
+    font-family: 'Dancing Script', cursive;
 }
 
-.categoria-img {
-  width: 100%;
-  border-radius: 12px;
-  margin: 20px 0;
+.nav-link {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
 }
 
-/* Itens */
-.itens {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+.nav-link:hover {
+    color: #F9C3C2; /* Cor rosa do logo */
 }
 
-.item {
-  background: #f7dbed38;
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-  height: 20em;
-  
+/* --- Seção do Cardápio --- */
+.cardapio-page {
+    padding-top: 80px; /* Espaço para o cabeçalho fixo */
 }
 
-.item:hover {
-  transform: scale(1.05);
-  
+.menu-section {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.item img {
-  width: 50%;
-  height: auto;
-  border-radius: 10px;
-  max-width: 480px;
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #f18ebf;
+    margin-bottom: 40px;
 }
 
-.item h3 {
-  margin: 10px 0 5px;
-  color: #1a1818;
+.category-group {
+    margin-bottom: 60px;
 }
 
-.item p {
-  font-size: 0.9rem;
-  color: #555;
+.category-group h3 {
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #F9C3C2; /* Linha de destaque para a categoria */
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-footer {
-  text-align: center;
-  background-color: #22e5f38c;
-  color: #131111;
-  font-size: 0.8em;
-  padding: 5px;
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-footer a {
-  font-weight: bolder;
-  text-decoration: none;
+.menu-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
-footer a {
-  text-decoration: underline;
-  color: #131111;
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-item h4 {
+    font-size: 1.2rem;
+    padding: 15px 15px 5px;
+    color: #F9C3C2;
+}
+
+.menu-item p {
+    font-size: 0.9rem;
+    padding: 0 15px 15px;
+    color: #666;
+}
+
+/* --- Rodapé --- */
+.main-footer {
+    background-color: #333333;
+    color: #D0E7E7;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* --- Responsividade para Telas Menores --- */
+@media (max-width: 600px) {
+    .header-nav {
+        flex-direction: column;
+    }
+    .nav-link {
+        margin: 5px 0;
+    }
+    .logo-container {
+        order: -1;
+    }
 }

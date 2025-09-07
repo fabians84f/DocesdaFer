@@ -3,155 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio</title>
+    <title>Cardápio - Doces da Fer</title>
     <link rel="stylesheet" href="cardapio.html.css">
+    <link rel="icon" type="image/png" href="Logo Doces da Fer com Brigadeiroredondo200.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-    <h1> Cardápio de Bolos & Sobremesas da Fer</h1>
-    <p>Escolha sua categoria favorita!</p>
-  </header>
 
-  <main class="menu-container">
+    <header class="main-header">
+        <nav class="header-nav">
+            <a href="index.html" class="nav-link">Início</a>
+            <div class="logo-container">
+                <img src="imagens/Logo Doces da Fer com Brigadeiroredondo200.png" alt="Logo Doces da Fer" class="logo-center">
+                <h1 class="site-title">Doces da Fer</h1>
+            </div>
+            <a href="index.html#contato" class="nav-link">Contato</a>
+        </nav>
+    </header>
 
-    <!-- Categoria 1 -->
-    <section class="categoria">
-      <h2>Bolos</h2>
-         <div class="itens">
-        <div class="item">
+    <main class="cardapio-page">
+        <section id="menu-completo" class="menu-section">
+            <h2>Cardápio Completo</h2>
 
-          <img src="imagens/bolobrigadeironinho.jpg" alt="Bolo de Chocolate">
-          <h3>Bolo de Brigadeiro com Ninho</h3>
-          <p>Um clássico irresistivel.</p>
-        </div>
+            <div class="category-group">
+                <h3>Bolos</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+de+Cenoura" alt="Bolo de Cenoura com Cobertura">
+                        <h4>Bolo de Cenoura com Brigadeiro</h4>
+                        <p>Bolo fofinho de cenoura com uma camada generosa de brigadeiro gourmet.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+de+Chocolate" alt="Bolo de Chocolate">
+                        <h4>Bolo de Chocolate Belga</h4>
+                        <p>A massa de chocolate mais molhadinha que você já provou, recheada com brigadeiro belga.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+Red+Velvet" alt="Bolo Red Velvet">
+                        <h4>Bolo Red Velvet</h4>
+                        <p>Um clássico americano com recheio de cream cheese e framboesa fresca.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+Leite+Ninho" alt="Bolo de Leite Ninho">
+                        <h4>Bolo de Leite Ninho</h4>
+                        <p>Massa branca com um recheio leve e aerado de leite em pó.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+Paçoca" alt="Bolo de Paçoca">
+                        <h4>Bolo de Paçoca</h4>
+                        <p>Para os amantes de amendoim, massa fofinha e recheio de paçoca cremoso.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+Floresta" alt="Bolo Floresta Negra">
+                        <h4>Bolo Floresta Negra</h4>
+                        <p>Combinação perfeita de chocolate, chantilly e cerejas marrasquino.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+Morango" alt="Bolo de Morango">
+                        <h4>Bolo de Morango com Ninho</h4>
+                        <p>Massa de baunilha com recheio de Leite Ninho e pedaços de morango.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+Limão" alt="Bolo de Limão">
+                        <h4>Bolo de Limão Siciliano</h4>
+                        <p>Refrescante e delicioso, com mousse de limão e raspas cítricas.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+Pistache" alt="Bolo de Pistache">
+                        <h4>Bolo de Pistache</h4>
+                        <p>Uma opção sofisticada com recheio cremoso de pistache.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+Dois+Amores" alt="Bolo Dois Amores">
+                        <h4>Bolo Dois Amores</h4>
+                        <p>Recheado com brigadeiro preto e branco, para quem ama os dois sabores.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+Abacaxi" alt="Bolo de Abacaxi">
+                        <h4>Bolo de Abacaxi com Coco</h4>
+                        <p>Massa leve e recheio cremoso de abacaxi e coco ralado.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+Churros" alt="Bolo de Churros">
+                        <h4>Bolo de Churros</h4>
+                        <p>Com sabor de canela e recheio de doce de leite. Perfeito para o café.</p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="item">
-          <img src="imagens/bolo2amore1.jpg" alt="Bolo de Morango">
-          <h3>Bolo de 2 Amores</h3>
-          <p>Um clássico irresistivel.</p>
-        </div>
+            <div class="category-group">
+                <h3>Cones Trufados</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Brigadeiro" alt="Cone Trufado de Brigadeiro">
+                        <h4>Brigadeiro</h4>
+                        <p>Casquinha crocante com recheio de brigadeiro tradicional.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Ninho" alt="Cone de Leite Ninho">
+                        <h4>Leite Ninho</h4>
+                        <p>Recheio cremoso e suave de leite em pó.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Beijinho" alt="Cone Trufado de Beijinho">
+                        <h4>Beijinho</h4>
+                        <p>A doçura do coco em uma versão super cremosa.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Oreo" alt="Cone Trufado de Oreo">
+                        <h4>Oreo</h4>
+                        <p>Creme de baunilha com pedaços do famoso biscoito.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Paçoca" alt="Cone Trufado de Paçoca">
+                        <h4>Paçoca</h4>
+                        <p>Sabor autêntico de amendoim, para os que amam um toque brasileiro.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Limão" alt="Cone Trufado de Limão">
+                        <h4>Limão</h4>
+                        <p>Para quem busca um sabor mais azedinho e refrescante.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Maracujá" alt="Cone Trufado de Maracujá">
+                        <h4>Maracujá</h4>
+                        <p>Mousse de maracujá para um contraste de sabores.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Morango" alt="Cone Trufado de Morango">
+                        <h4>Morango</h4>
+                        <p>Recheio de brigadeiro de morango para um sabor frutado.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Creme+Brulle" alt="Cone Trufado de Creme Brullé">
+                        <h4>Creme Brullé</h4>
+                        <p>Aromas de baunilha com a crocância do açúcar queimado.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Doce+de+Leite" alt="Cone Trufado de Doce de Leite">
+                        <h4>Doce de Leite</h4>
+                        <p>Recheado com o nosso doce de leite artesanal.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Churros" alt="Cone Trufado de Churros">
+                        <h4>Churros</h4>
+                        <p>Com um toque de canela e recheio de doce de leite.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cone+Trufado+Nutella" alt="Cone Trufado de Nutella">
+                        <h4>Nutella</h4>
+                        <p>Recheio do creme de avelã mais amado do mundo.</p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="item">
-          <img src="imagens/boloninhomorango1.jpg" alt="Bolo de Cenoura">
-          <h3>Bolo de Morango com Ninho</h3>
-          <p>Um clássico irresistivel.</p>
-        </div>
+            <div class="category-group">
+                <h3>Bombons</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Morango" alt="Bombom de Morango">
+                        <h4>Morango com Chocolate</h4>
+                        <p>Morango fresco coberto com uma casca crocante de chocolate.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Creme+de+Avela" alt="Bombom de Creme de Avelã">
+                        <h4>Creme de Avelã</h4>
+                        <p>Bombom recheado com creme de avelã e um toque de avelã picada.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Brigadeiro+Gourmet" alt="Bombom Brigadeiro Gourmet">
+                        <h4>Brigadeiro Gourmet</h4>
+                        <p>Feito com chocolate nobre e enrolado em granulado de chocolate belga.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Castanha" alt="Bombom de Castanha">
+                        <h4>Castanha-do-Pará</h4>
+                        <p>Recheio cremoso com pedaços de castanha-do-pará.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Maracuja" alt="Bombom de Maracujá">
+                        <h4>Maracujá</h4>
+                        <p>Uma explosão de sabor com o nosso recheio azedinho de maracujá.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Beijinho" alt="Bombom de Beijinho">
+                        <h4>Beijinho</h4>
+                        <p>O sabor clássico do coco em uma versão de bombom.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Leite+Ninho" alt="Bombom de Leite Ninho">
+                        <h4>Leite Ninho</h4>
+                        <p>Um recheio suave e cremoso, perfeito para todas as idades.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Pistache" alt="Bombom de Pistache">
+                        <h4>Pistache</h4>
+                        <p>Sabor sofisticado e marcante com recheio de pistache.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Amendoim" alt="Bombom de Amendoim">
+                        <h4>Amendoim</h4>
+                        <p>Recheio de amendoim cremoso, com toque salgado.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Café" alt="Bombom de Café">
+                        <h4>Café</h4>
+                        <p>Para os amantes de café, um recheio com sabor intenso.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Limão+Siciliano" alt="Bombom de Limão Siciliano">
+                        <h4>Limão Siciliano</h4>
+                        <p>Um recheio azedinho e perfumado para os dias quentes.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bombom+Doce+de+Leite" alt="Bombom de Doce de Leite">
+                        <h4>Doce de Leite</h4>
+                        <p>O doce de leite perfeito para um bombom que derrete na boca.</p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="item">
-          <img src="imagens/boloninho.jpg" alt="Bolo Red Velvet">
-          <h3>Bolo de Ninho</h3>
-          <p>Um clássico irresistivel.</p>
-        </div>
-        
-        <div class="item">
-          <img src="imagens/bolo2amoresmorango1.jpg" alt="Bolo de Nozes">
-          <h3>Bolo de 2 Amores com Morango</h3>
-          <p>Um clássico irresistivel.</p>
-        </div>
-      </div>
-    </section>
+            <div class="category-group">
+                <h3>Sobremesas</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Torta+Holandesa" alt="Torta Holandesa">
+                        <h4>Torta Holandesa</h4>
+                        <p>Base de biscoito, creme leve e cobertura de chocolate.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Pudim" alt="Pudim de Leite Condensado">
+                        <h4>Pudim de Leite Condensado</h4>
+                        <p>O clássico que não pode faltar, cremoso e com calda de caramelo.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Doce+de+Pote" alt="Doce de Pote">
+                        <h4>Doce de Pote</h4>
+                        <p>Camadas de bolo, recheio e cobertura, servidos em um pote.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Pavê" alt="Pavê de Chocolate">
+                        <h4>Pavê de Chocolate com Morango</h4>
+                        <p>Camadas de creme de chocolate e biscoito com morangos frescos.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Mousse" alt="Mousse de Chocolate">
+                        <h4>Mousse de Chocolate</h4>
+                        <p>Uma sobremesa leve e aerada, feita com chocolate nobre.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Brownie" alt="Brownie com Sorvete">
+                        <h4>Brownie com Sorvete</h4>
+                        <p>Um delicioso brownie com nozes, acompanhado de sorvete de creme.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Cheesecake" alt="Cheesecake de Frutas Vermelhas">
+                        <h4>Cheesecake de Frutas Vermelhas</h4>
+                        <p>Base de biscoito, recheio de cream cheese e calda de frutas vermelhas.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Brigadeiro+de+Colher" alt="Brigadeiro de Colher">
+                        <h4>Brigadeiro de Colher</h4>
+                        <p>O sabor clássico do brigadeiro, em uma versão cremosa para comer de colher.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Palha+Italiana" alt="Palha Italiana">
+                        <h4>Palha Italiana</h4>
+                        <p>Brigadeiro cremoso com pedaços de biscoito crocante.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Bolo+de+Pote" alt="Bolo de Pote">
+                        <h4>Bolo de Pote de Red Velvet</h4>
+                        <p>Uma versão deliciosa e prática do nosso bolo red velvet.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Torta+de+Limão" alt="Torta de Limão">
+                        <h4>Torta de Limão</h4>
+                        <p>Com um recheio suave de limão e um merengue maçaricado.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://via.placeholder.com/300x200/F0E6D2/333333?text=Banoffee+Pie" alt="Banoffee Pie">
+                        <h4>Banoffee Pie</h4>
+                        <p>A união perfeita entre banana, doce de leite e chantilly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- Categoria 2 -->
-    <section class="categoria">
-      <h2>Cones Trufados</h2>
-      <div class="itens">
-        <div class="item">
-          <img src="imagens/bombommorango.jpg" alt="Torta de Limão">
-          <h3>Torta de Limão</h3>
-          <p>Base crocante com mousse azedinha e merengue.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Torta Holandesa">
-          <h3>Torta Holandesa</h3>
-          <p>Camadas de biscoito, creme e cobertura de chocolate.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Torta de Maçã">
-          <h3>Torta de Maçã</h3>
-          <p>Tradicional com maçãs caramelizadas e canela.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Torta de Morango">
-          <h3>Torta de Morango</h3>
-          <p>Leve e refrescante, coberta com morangos frescos.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Torta Alemã">
-          <h3>Torta Alemã</h3>
-          <p>Camadas de creme amanteigado e biscoitos.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Categoria 3 -->
-    <section class="categoria">
-      <h2>Trufas</h2>
-      <div class="itens">
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Brigadeiro">
-          <h3>Brigadeiro</h3>
-          <p>O clássico brasileiro feito com chocolate e granulado.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Beijinho">
-          <h3>Beijinho</h3>
-          <p>Delícia de coco com leite condensado.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Cajuzinho">
-          <h3>Cajuzinho</h3>
-          <p>Docinho de amendoim com açúcar e chocolate.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Trufa de Chocolate">
-          <h3>Trufa</h3>
-          <p>Chocolate recheado com ganache irresistível.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Quindim">
-          <h3>Quindim</h3>
-          <p>Tradicional doce amarelinho de coco e gemas.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Categoria 4 -->
-    <section class="categoria">
-      <h2>Sobremesas</h2>
-      <div class="itens">
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Pavê de Chocolate">
-          <h3>Pavê de Chocolate</h3>
-          <p>Camadas de biscoito com creme de chocolate.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Mousse de Maracujá">
-          <h3>Mousse de Maracujá</h3>
-          <p>Refrescante e levemente azedinha.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Sorvete Caseiro">
-          <h3>Sorvete Caseiro</h3>
-          <p>Cremoso e artesanal em vários sabores.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Gelatina Colorida">
-          <h3>Gelatina Colorida</h3>
-          <p>Colorida, divertida e com creme de leite.</p>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/200" alt="Cheesecake Gelado">
-          <h3>Cheesecake Gelado</h3>
-          <p>Cremoso com calda de frutas vermelhas.</p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <ins>
-        <p><a href="index.html" target="_blank" rel="external">Clique aqui para voltar!</a></p>
-      </ins>
+    <footer class="main-footer">
+        <p>&copy; 2025 Doces da Fer. Todos os direitos reservados.</p>
     </footer>
 
-  </main>
+</body>
+</html>
 </body>
 </html>
