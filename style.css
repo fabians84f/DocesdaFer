@@ -80,8 +80,8 @@ body {
     }
 
     h2 {
-      font-family: 'Amperzand', Times, serif;
-      font-size: 3em;
+      font-family: Verdana, Geneva, Tahoma, sans-serif,
+      font-size:initial
     }
 
     .hero {
