@@ -80,7 +80,7 @@ body {
     }
 
     h2 {
-      font-family: Verdana, Geneva, Tahoma, sans-serif,
+      font-family: Verdana, Geneva, Tahoma, sans-serif
       font-size:initial
     }
 
@@ -161,6 +161,36 @@ body {
     .logo-container {
         order: -1; /* Move o logo e o título para o topo */
     }
+    /* Estilo Padrão para Telas Maiores (Desktop) */
+/* As imagens ficam em uma coluna, uma embaixo da outra */
+.container-de-fotos {
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    gap: 15px; /* Espaço entre as imagens */
+}
+
+.imagem-doce {
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    max-width: 400px; /* Largura máxima para não esticar muito */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* --- Media Query para Celulares --- */
+@media (max-width: 600px) {
+    /* Quando a tela for menor que 600px (tamanho de celular), aplique estas regras */
+    .container-de-fotos {
+        flex-direction: row; /* Altera a direção dos itens para linha (lado a lado) */
+        justify-content: center; /* Centraliza os itens na linha */
+        align-items: flex-start; /* Alinha os itens pelo topo, se houver diferença de altura */
+    }
+
+    .imagem-doce {
+        width: 30%; /* Cada imagem ocupa 30% da largura, deixando 10% para o espaçamento */
+        max-width: none; /* Remove a largura máxima para que elas possam encolher */
+    }
+}
 }
 
    
