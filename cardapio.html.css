@@ -18,7 +18,7 @@ body {
 
 /* --- Cabeçalho (Estilos da página inicial) --- */
 .main-header {
-    background-color: #F0E6D2; /* Cor bege do logo */
+    background-color: rgb(245, 196, 228);; /* Cor bege do logo */
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
