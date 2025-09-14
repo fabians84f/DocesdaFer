@@ -110,24 +110,25 @@ body {
     padding: 34px 40px;
     background-color: #22e5f38c ;
     text-align: center;
+    font-size: 20px;
 }
 
 .photo-grid {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .photo-item {
-    width: 240px;
-    max-width: 300px; /* Tamanho pequeno conforme solicitado */
-    height: auto;
+    width: 260px;     /* Tamanho pequeno conforme solicitado */
+    height: 250px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(51, 49, 49, 0.1);
     transition: transform 0.3s ease;
+    font-size: 20px;
+    padding: 10px;
 }
-
 
 .photo-item:hover {
     transform: scale(1.05);
