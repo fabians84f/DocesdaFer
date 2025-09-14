@@ -39,8 +39,9 @@ body {
 
     header > h1 {
       font-variant: normal;
-      font-size: 50px;
+      font-size: 80px;
       font-weight: normal;
+      margin: 10px;
     }
 
     header > p {
@@ -80,8 +81,8 @@ body {
     }
 
     h2 {
-      font-family: Verdana, Geneva, Tahoma, sans-serif
-      font-size:initial
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size:initial;
     }
 
     .hero {
@@ -99,10 +100,15 @@ body {
     }
 
     .section-title {
+      font-family:sans-serif;
       text-align: center;
-      margin: 5px 0 10px;
-      font-size: 50px;
+      margin: 5px 0 1px;
+      font-size: 20px;
       color: #181516;
+      background-color: #f7d0eaa8;
+      padding: 10px;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.116);
+      
     }
 
     /* --- Seção de Fotos (Slides) --- */
@@ -126,7 +132,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(51, 49, 49, 0.1);
     transition: transform 0.3s ease;
-    font-size: 20px;
+    font-size: 10px;
     padding: 10px;
 }
 
@@ -138,7 +144,7 @@ body {
       background-color: #22e5f38c;
       color: rgb(22, 21, 21);
       text-align: center;
-      padding: 10px;
+      padding: 5px;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 15px;
       box-shadow: #000;
