@@ -150,42 +150,8 @@ body {
       box-shadow: #000;
     }
 
-    /* --- Media Queries para Responsividade --- */
-@media (max-width: 500px) {
-    /* Ajustes para telas de celulares */
-    .header-nav {
-        flex-direction: column;
-    }
-
-    .nav-link {
-        margin: 5px 0;
-    }
-
-    .site-title {
-        font-size: 1.8rem;
-    }
-
-    .logo-container {
-        order: -1; /* Move o logo e o título para o topo */
-    }
-    /* Estilo Padrão para Telas Maiores (Desktop) */
-/* As imagens ficam em uma coluna, uma embaixo da outra */
-.container-de-fotos {
-    display: flex;
-    flex-direction: column; /* Coloca os itens em coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    gap: 15px; /* Espaço entre as imagens */
-}
-
-.photo-item {
-    width: 100%; /* Ocupa 100% da largura do contêiner */
-    max-width: 400px; /* Largura máxima para não esticar muito */
-    height: auto;
-    border-radius: 8px;
-}
-
 /* --- Media Query para Celulares --- */
-@media (max-width: 600px) {
+@media (max-width: 576px) {
     /* Quando a tela for menor que 600px (tamanho de celular), aplique estas regras */
     .container-de-fotos {
         flex-direction: row; /* Altera a direção dos itens para linha (lado a lado) */
