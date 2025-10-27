@@ -32,6 +32,7 @@
 
 body {
       margin: 0;
+      padding: 0px;
       font-family: 'Graziela';
       background-color: #fff8f0;
       color: #333;
@@ -72,7 +73,7 @@ body {
       font-weight: bold;
       transition-duration: 0.5s;
       font-family:sans-serif;
-      font-size: 20px;
+      font-size: 15px;
     }
 
     nav a:hover {
@@ -80,41 +81,25 @@ body {
      color: aqua;
     }
 
-    h2 {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-size:initial;
-    }
-
     .hero {
       background-image: url('banner.jpg'); /* Substitua por sua imagem */
-      background-size: cover;
+      background-size:cover;
       background-position: center;
-      height: 260px;
+      height: 240px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: rgb(240, 167, 216);
-      font-size: 40px;
+      font-size: 1px;
       font-weight: bold;
       text-shadow: 2px 2px 5px #000;
     }
 
-    .section-title {
-      font-family:'Dancing Script', cursive;;
-      text-align: center;
-      margin: 5px 0 1px;
-      font-size: 20px;
-      color: #181516;
-      background-color: #f7d0eaa8;
-      padding: 10px;
-      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.116);
-      
-    }
-
+   
     /* --- Seção de Fotos (Slides) --- */
 .photo-section {
     padding: 34px 40px;
-    background-color: #22e5f38c ;
+    background-color:#f7d0eaa8;
     text-align: center;
     font-size: 20px;
 }
@@ -122,17 +107,17 @@ body {
 .photo-grid {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .photo-item {
-    width: 260px;     /* Tamanho pequeno conforme solicitado */
-    height: 250px;
-    border-radius: 10px;
+    width: 250px;     /* Tamanho pequeno conforme solicitado */
+    height: 235px;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(51, 49, 49, 0.1);
     transition: transform 0.3s ease;
-    font-size: 10px;
+    font-size: 1px;
     padding: 10px;
 }
 
@@ -144,7 +129,7 @@ body {
       background-color: #22e5f38c;
       color: rgb(22, 21, 21);
       text-align: center;
-      padding: 5px;
+      padding: 4px;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 15px;
       box-shadow: #000;
@@ -164,24 +149,4 @@ body {
     .site-title {
         font-size: 1.8rem;
     }
-
-    .logo-container {
-        order: -1; /* Move o logo e o título para o topo */
-    }
-    /* Estilo Padrão para Telas Maiores (Desktop) */
-/* As imagens ficam em uma coluna, uma embaixo da outra */
-.container-de-fotos {
-    display: flex;
-    flex-direction: column; /* Coloca os itens em coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    gap: 15px; /* Espaço entre as imagens */
 }
-
-.photo-item {
-    width: 100%; /* Ocupa 100% da largura do contêiner */
-    max-width: 400px; /* Largura máxima para não esticar muito */
-    height: auto;
-    border-radius: 8px;
-}
-}
-   
