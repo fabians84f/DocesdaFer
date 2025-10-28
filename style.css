@@ -117,7 +117,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(51, 49, 49, 0.1);
     transition: transform 0.3s ease;
-    font-size: 1px;
+    font-size: 10px;
     padding: 10px;
 }
 
@@ -143,30 +143,38 @@ body {
       box-shadow: #000;
     }
 
-/* ============================== */
-/*      RESPONSIVIDADE MOBILE     */
-/* ============================== */
-/* ============================== */
-/* 🍏 RESPONSIVIDADE MOBILE      */
-/* ============================== */
+/* Responsividade para celular */
+@media (max-width: 600px) {
 
- /* Regras Gerais para Tablets e Celulares */
- 
-
-@media (max-width: 300px) {
-  /* Regras para Smartphones (Telas mais estreitas) */
   header > h1 {
-    font-size: 10px;
+    font-size: 40px; /* Reduz título no celular */
   }
 
   .hero {
-    height: 150px;
-    background-size: 30%;
+    height: 250px; /* Dimensiona o banner */
+    background-size: cover; /* Fica melhor em telas pequenas */
   }
 
-  nav > a {
-    /* Garante que os links da nav fiquem em colunas se não couberem */
-    display: block;
-    margin: 5px 0;
+  /* Deixa 3 fotos por linha */
+  .photo-grid {
+    justify-content: space-between;
+  }
+
+  .photo-item {
+    width: calc(33.33% - 10px);
+    height: auto;
+    padding: 2px;
+    font-size: 1px;
+  }
+}
+
+/* Para telas muito pequenas (ex: celulares antigos) */
+@media (max-width: 380px) {
+  .photo-item {
+    width: calc(33.33% - 5px);
+  }
+
+  header > h1 {
+    font-size: 32px;
   }
 }
