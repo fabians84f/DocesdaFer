@@ -28,13 +28,23 @@
   font-style: normal;
 }
 
+html, body {
+  height: 100%;
+}
 
-
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
 body {
+      flex-shrink: 0;
       margin: 0;
       padding: 0px;
       font-family: 'Graziela';
-      background-color: #fff8f0;
+      background-color: #c5eff18c;
       color: #333;
     }
 
@@ -51,6 +61,7 @@ body {
     }
 
     header {
+      flex: 0 0 10%;
       background-color: #22e5f38c;
       color: rgb(19, 1, 1);
       padding: 1px;
@@ -82,10 +93,11 @@ body {
     }
 
     .hero {
+      flex: 0 0 20%;
       background-image: url('banner.jpg'); /* Substitua por sua imagem */
-      background-size:cover;
+      background-size:contain;
       background-position: center;
-      height: 240px;
+      height: 252px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -102,6 +114,7 @@ body {
     background-color:#f7d0eaa8;
     text-align: center;
     font-size: 20px;
+    flex: 0 0 10%;
 }
 
 .photo-grid {
@@ -112,14 +125,23 @@ body {
 }
 
 .photo-item {
-    width: 250px;     /* Tamanho pequeno conforme solicitado */
-    height: 235px;
+    width: 200px;     /* Tamanho pequeno conforme solicitado */
+    height: 185px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(51, 49, 49, 0.1);
     transition: transform 0.3s ease;
     font-size: 1px;
     padding: 10px;
 }
+
+.photo-section {
+  padding: 10px 20px; /* reduz espaço interno */
+  background-color: #f7d0eaa8;
+  text-align: center;
+  font-size: 18px;
+  flex: 0 0 8%; /* ocupa menos espaço da tela */
+}
+
 
 .photo-item:hover {
     transform: scale(1.05);
@@ -135,18 +157,50 @@ body {
       box-shadow: #000;
     }
 
-/* --- Media Queries para Responsividade --- */
-@media (max-width: 500px) {
-    /* Ajustes para telas de celulares */
-    .header-nav {
-        flex-direction: column;
-    }
+/* ============================== */
+/*      RESPONSIVIDADE MOBILE     */
+/* ============================== */
+@media (max-width: 768px) {
+  header > h1 {
+    font-size: 40px; /* reduz título */
+  }
 
-    .nav-link {
-        margin: 5px 0;
-    }
+  nav > a {
+    display: inline-block;
+    font-size: 13px;
+    padding: 6px;
+  }
 
-    .site-title {
-        font-size: 1.8rem;
-    }
+  .hero {
+    height: 180px; /* diminui o banner */
+    background-size: 80%; /* reduz imagem dentro da caixa */
+  }
+
+  .photo-grid {
+    gap: 6px;
+  }
+
+  .photo-item {
+    width: 45%;   /* duas fotos por linha */
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  header > h1 {
+    font-size: 30px;
+  }
+
+  .hero {
+    height: 150px;
+    background-size: 75%;
+  }
+
+  .photo-item {
+    width: 48%; /* duas pequenas lado a lado */
+  }
+
+  footer {
+    font-size: 13px;
+  }
 }
