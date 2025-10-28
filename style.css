@@ -144,7 +144,7 @@ body {
     }
 
 /* Responsividade para celular */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
   header > h1 {
     font-size: 40px; /* Reduz título no celular */
@@ -165,16 +165,5 @@ body {
     height: auto;
     padding: 2px;
     font-size: 1px;
-  }
-}
-
-/* Para telas muito pequenas (ex: celulares antigos) */
-@media (max-width: 380px) {
-  .photo-item {
-    width: calc(33.33% - 5px);
-  }
-
-  header > h1 {
-    font-size: 32px;
   }
 }
