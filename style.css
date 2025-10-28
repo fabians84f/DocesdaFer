@@ -164,57 +164,18 @@ body {
 /* 🍏 RESPONSIVIDADE MOBILE      */
 /* ============================== */
 
-@media (max-width: 768px) {
-  /* Regras Gerais para Tablets e Celulares */
-  header > h1 {
-    font-size: 40px; /* Reduz título */
-  }
-
-  nav > a {
-    display: inline-block;
-    font-size: 13px;
-    padding: 6px;
-  }
-
-  .hero {
-    height: 180px; /* Diminui o banner */
-    background-size: 80%; /* Reduz imagem dentro da caixa */
-  }
-
-  .photo-grid {
-    gap: 6px; /* Reduz o espaçamento entre as fotos */
-  }
-
-  /*
-   * ✅ ALTERADO: 3 FOTOS LADO A LADO
-   * Usamos calc(33.33% - X) para garantir que 3 itens caibam na linha,
-   * subtraindo um pouco para o gap.
-   */
-  .photo-item {
-    width: calc(33.33% - 4px);
-    height: auto; /* Deixa a altura flexível */
-    padding: 5px; /* Reduz o padding interno */
-  }
-
-  .photo-section {
-    padding: 10px 5px; /* Ajusta o padding da seção */
-    flex: none; /* Não força o flex-grow */
-  }
-
-  footer {
-    font-size: 13px;
-  }
-}
+ /* Regras Gerais para Tablets e Celulares */
+ 
 
 @media (max-width: 480px) {
   /* Regras para Smartphones (Telas mais estreitas) */
   header > h1 {
-    font-size: 30px;
+    font-size: 10px;
   }
 
   .hero {
     height: 150px;
-    background-size: 75%;
+    background-size: 30%;
   }
 
   /*
@@ -222,7 +183,7 @@ body {
    * 3 colunas em 480px pode ser muito apertado. Duas fica mais legível.
    */
   .photo-item {
-    width: calc(50% - 4px); /* 2 fotos lado a lado */
+    width: calc(33.33% - 3px); /* 2 fotos lado a lado */
   }
 
   nav > a {
