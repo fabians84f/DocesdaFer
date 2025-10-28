@@ -114,7 +114,7 @@ body {
     background-color:#f7d0eaa8;
     text-align: center;
     font-size: 20px;
-    flex: 0 0 10%;
+    flex: 0 0 auto;
 }
 
 .photo-grid {
@@ -160,9 +160,14 @@ body {
 /* ============================== */
 /*      RESPONSIVIDADE MOBILE     */
 /* ============================== */
+/* ============================== */
+/* 🍏 RESPONSIVIDADE MOBILE      */
+/* ============================== */
+
 @media (max-width: 768px) {
+  /* Regras Gerais para Tablets e Celulares */
   header > h1 {
-    font-size: 40px; /* reduz título */
+    font-size: 40px; /* Reduz título */
   }
 
   nav > a {
@@ -172,21 +177,37 @@ body {
   }
 
   .hero {
-    height: 180px; /* diminui o banner */
-    background-size: 80%; /* reduz imagem dentro da caixa */
+    height: 180px; /* Diminui o banner */
+    background-size: 80%; /* Reduz imagem dentro da caixa */
   }
 
   .photo-grid {
-    gap: 6px;
+    gap: 6px; /* Reduz o espaçamento entre as fotos */
   }
 
+  /*
+   * ✅ ALTERADO: 3 FOTOS LADO A LADO
+   * Usamos calc(33.33% - X) para garantir que 3 itens caibam na linha,
+   * subtraindo um pouco para o gap.
+   */
   .photo-item {
-    width: 45%;   /* duas fotos por linha */
-    height: auto;
+    width: calc(33.33% - 4px);
+    height: auto; /* Deixa a altura flexível */
+    padding: 5px; /* Reduz o padding interno */
+  }
+
+  .photo-section {
+    padding: 10px 5px; /* Ajusta o padding da seção */
+    flex: none; /* Não força o flex-grow */
+  }
+
+  footer {
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
+  /* Regras para Smartphones (Telas mais estreitas) */
   header > h1 {
     font-size: 30px;
   }
@@ -196,11 +217,17 @@ body {
     background-size: 75%;
   }
 
+  /*
+   * 💡 RECOMENDADO: 2 FOTOS POR LINHA em telas muito estreitas
+   * 3 colunas em 480px pode ser muito apertado. Duas fica mais legível.
+   */
   .photo-item {
-    width: 48%; /* duas pequenas lado a lado */
+    width: calc(50% - 4px); /* 2 fotos lado a lado */
   }
 
-  footer {
-    font-size: 13px;
+  nav > a {
+    /* Garante que os links da nav fiquem em colunas se não couberem */
+    display: block;
+    margin: 5px 0;
   }
 }
