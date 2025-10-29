@@ -21,6 +21,13 @@
   font-style: normal;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh; 
+}
+
 body {
       margin: 0;
       padding: 0px;
@@ -135,64 +142,3 @@ body {
       box-shadow: #000;
     }
 
-/* Responsividade para celular */
-@media  (max-width: 700px) {
-
-  header > h1 {
-    font-size: 50px; /* Reduz título no celular */
-  }
-
-  .hero {
-    height: 250px; /* Dimensiona o banner */
-    background-size: cover; /* Fica melhor em telas pequenas */
-  }
-
-  /* Deixa 3 fotos por linha */
-  .photo-grid {
-    justify-content: space-between;
-  }
-
-  .photo-item {
-    width: calc(33.33% - 12px);
-    height: auto;
-    padding: 4px;
-    font-size: 4px;
-  }
-
-  /* Quando o celular está em pé (vertical - portrait) */
-@media screen and (orientation: portrait) {
-    body {
-        /* Estilos para modo vertical */
-        background-color: lightblue;
-    }
-}
-
-/* Quando o celular está deitado (horizontal - landscape) */
-@media screen and (orientation: landscape) {
-    body {
-        /* Estilos para modo horizontal */
-        background-color: lightgreen;
-    }
-}
-
-header > h1 {
-    font-size: 50px; /* Reduz título no celular */
-  }
-
-  .hero {
-    height: 250px; /* Dimensiona o banner */
-    background-size: cover; /* Fica melhor em telas pequenas */
-  }
-
-  /* Deixa 3 fotos por linha */
-  .photo-grid {
-    justify-content: space-between;
-  }
-
-  .photo-item {
-    width: calc(33.33% - 12px);
-    height: auto;
-    padding: 4px;
-    font-size: 4px;
-  }
-}
