@@ -130,7 +130,7 @@ body {
 
 
 .photo-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
     footer {
@@ -147,7 +147,7 @@ body {
 @media (max-width: 768px) {
 
   header > h1 {
-    font-size: 40px; /* Reduz título no celular */
+    font-size: 50px; /* Reduz título no celular */
   }
 
   .hero {
@@ -163,7 +163,7 @@ body {
   .photo-item {
     width: calc(33.33% - 10px);
     height: auto;
-    padding: 2px;
-    font-size: 1px;
+    padding: 4px;
+    font-size: 4px;
   }
 }
