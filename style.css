@@ -104,8 +104,8 @@ body {
 }
 
 .photo-item {
-    width: 170px;     /* Tamanho pequeno conforme solicitado */
-    height: 155px;
+    width: 160px;     /* Tamanho pequeno conforme solicitado */
+    height: 145px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(51, 49, 49, 0.1);
     transition: transform 0.3s ease;
@@ -136,7 +136,7 @@ body {
     }
 
 /* Responsividade para celular */
-@media  (max-width: 800px) {
+@media  (max-width: 700px) {
 
   header > h1 {
     font-size: 50px; /* Reduz título no celular */
@@ -158,5 +158,22 @@ body {
     padding: 4px;
     font-size: 4px;
   }
+
+  /* Quando o celular está em pé (vertical - portrait) */
+@media screen and (orientation: portrait) {
+    body {
+        /* Estilos para modo vertical */
+        background-color: lightblue;
+    }
+}
+
+/* Quando o celular está deitado (horizontal - landscape) */
+@media screen and (orientation: landscape) {
+    body {
+        /* Estilos para modo horizontal */
+        background-color: lightgreen;
+    }
+}
+
 
 }
