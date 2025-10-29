@@ -1,20 +1,6 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: 'Amperzand';
-  src: url('fontes/Amperzand.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Saint';
-  src: url('fontes/212\ Saint\ Paddy\ Demo.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Graziela';
   src: url('fontes/La\ Graziela\ Script\ Demo.otf') format('opentype');
   font-weight: normal;
@@ -23,7 +9,14 @@
 
 @font-face {
   font-family: 'Rembullan';
-  src: url('fontes/Rembullan-Mallam.otf') format('embedded opentype');
+  src: url('fontes/Rembullan-Mallam.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'milven';
+  src: url('fontes/Hanged\ Letters.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -31,9 +24,8 @@
 body {
       margin: 0;
       padding: 0px;
-      font-family: 'Graziela';
-      background-color: #c5eff18c;
-      color: #333;
+      font-family: 'milven';
+      background-color: #b4eef18c;
     }
 
     header > h1 {
@@ -51,7 +43,7 @@ body {
     header {
       flex: 0 0 10%;
       background-color: #22e5f38c;
-      color: rgb(19, 1, 1);
+      color: rgba(22, 21, 21, 0.925);
       padding: 1px;
       text-align: center;
       box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.096);
@@ -112,8 +104,8 @@ body {
 }
 
 .photo-item {
-    width: 200px;     /* Tamanho pequeno conforme solicitado */
-    height: 185px;
+    width: 170px;     /* Tamanho pequeno conforme solicitado */
+    height: 155px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(51, 49, 49, 0.1);
     transition: transform 0.3s ease;
@@ -161,7 +153,7 @@ body {
   }
 
   .photo-item {
-    width: calc(33.33% - 10px);
+    width: calc(33.33% - 12px);
     height: auto;
     padding: 4px;
     font-size: 4px;
