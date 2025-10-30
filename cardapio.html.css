@@ -42,14 +42,14 @@ body {
 }
 
 .logo-center {
-    width: 80px;
+    width: 100px;
     height: auto;
 }
 
 .site-title {
-    font-size: 2rem;
+    font-size: 1rem;
     color: #333333;
-    margin-top: 5px;
+    margin-top: 1px;
     font-family: 'Dancing Script', cursive;
 }
 
@@ -150,6 +150,9 @@ h2 {
     .menu-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
+    }
+    .main header {
+        width:auto;;
     }
 
     .menu-item img {
