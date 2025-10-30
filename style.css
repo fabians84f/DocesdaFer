@@ -21,12 +21,7 @@
   font-style: normal;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh; 
-}
+
 
 body {
       margin: 0;
@@ -161,7 +156,7 @@ body {
 
   .photo-item {
     width: calc(33.33% - 12px);
-    height:fit-content;
+    height:auto;
     padding: 4px;
     font-size: 4px;
   }
