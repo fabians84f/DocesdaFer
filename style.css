@@ -161,7 +161,7 @@ body {
 
   .photo-item {
     width: calc(33.33% - 12px);
-    height: auto;
+    height:max-content;
     padding: 4px;
     font-size: 4px;
   }
