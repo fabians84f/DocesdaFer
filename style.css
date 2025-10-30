@@ -106,8 +106,8 @@ body {
 }
 
 .photo-item {
-    width: 160px;     /* Tamanho pequeno conforme solicitado */
-    height: 145px;
+    width: 155px;     /* Tamanho pequeno conforme solicitado */
+    height: 140px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(51, 49, 49, 0.1);
     transition: transform 0.3s ease;
