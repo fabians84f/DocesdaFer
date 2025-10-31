@@ -75,21 +75,26 @@ body {
     }
 
     .hero {
-      flex: 0 0 20%;
+      flex: 0 0 10%;
       background-image: url('banner.jpg'); /* Substitua por sua imagem */
-      background-size:contain;
+      background-size:10px;
+      background-repeat: no-repeat;
       background-position: center;
-      height: 252px;
+      height: 180px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: rgb(240, 167, 216);
-      font-size: 1px;
+      font-size: 15%;
       font-weight: bold;
       text-shadow: 2px 2px 5px #000;
     }
 
-   
+    .hero img {
+      width: 180px;
+      height: auto;
+    }
+
     /* --- Seção de Fotos (Slides) --- */
 .photo-section {
     padding: 34px 40px;
