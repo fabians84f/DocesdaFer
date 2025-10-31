@@ -35,10 +35,6 @@ body {
       background-color: #b4eef18c;
     }
 
-    main {
-      flex: 1;
-    }
-
     header > h1 {
       font-variant: normal;
       font-size: 80px;
