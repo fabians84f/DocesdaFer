@@ -146,4 +146,30 @@ body {
       box-shadow: #000;
     }
 
- 
+    /* Responsividade para celular */
+@media  (max-width: 700px) {
+
+  main {
+    height: 100%;
+  }
+  header > h1 {
+    font-size: 80px; /* Reduz título no celular */
+  }
+
+  /* Deixa 3 fotos por linha */
+  .photo-grid {
+    justify-content: space-between;
+  }
+
+  .photo-item {
+    width: calc(33.33% - 12px);
+    height:auto;
+    padding: 4px;
+    font-size: 8px;
+  }
+
+  footer {
+    font-size: 20px;
+  }
+}
+
