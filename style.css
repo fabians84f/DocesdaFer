@@ -26,7 +26,6 @@ html, body {
 }
 
 body {
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
       margin: 0;
@@ -150,8 +149,15 @@ body {
     /* Responsividade para celular */
 @media  (max-width: 700px) {
 
+  html, body {
+  height: 100%;
+}
+
+  main {
+    height: 100%;
+  }
   header > h1 {
-    font-size: 60px; /* Reduz título no celular */
+    font-size: 90px; /* Reduz título no celular */
   }
 
   .hero {
