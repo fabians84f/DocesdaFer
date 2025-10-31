@@ -146,35 +146,4 @@ body {
       box-shadow: #000;
     }
 
-    /* Responsividade para celular */
-@media  (max-width: 700px) {
-
-  html, body {
-  height: 100%;
-}
-
-  main {
-    height: 100%;
-  }
-  header > h1 {
-    font-size: 90px; /* Reduz título no celular */
-  }
-
-  .hero {
-    height: 300px; /* Dimensiona o banner */
-    background-size: cover; /* Fica melhor em telas pequenas */
-  }
-
-  /* Deixa 3 fotos por linha */
-  .photo-grid {
-    justify-content: space-between;
-  }
-
-  .photo-item {
-    width: calc(33.33% - 12px);
-    height:auto;
-    padding: 4px;
-    font-size: 8px;
-  }
-}
-
+ 
