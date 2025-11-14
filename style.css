@@ -149,12 +149,14 @@ body {
     /* ================================================= */
 /* === MEDIA QUERY PARA CELULAR (Máx 767px) === */
 /* ================================================= */
-@media screen and (max-width: 700px)  {
+@media screen and (max-width: 600px)  {
 
     /* --- Elementos Gerais --- */
     body {
         /* Garante que a rolagem seja da página, se necessário */
         overflow-x: hidden; 
+        padding: 0;
+        
     }
 
     /* --- Cabeçalho e Título --- */
