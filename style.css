@@ -160,7 +160,7 @@ body {
     /* --- Cabeçalho e Título --- */
     header > h1 {
         font-size: 50px; /* Título menor para caber na tela */
-        margin: 5px;
+        margin: 12px;
     }
 
     /* --- Navegação --- */
@@ -180,11 +180,11 @@ body {
 
     /* --- Seção Hero --- */
     .hero {
-        height: 200px; /* Reduz a altura do banner */
+        height: 230px; /* Reduz a altura do banner */
     }
 
     .hero img {
-        width: 198px; /* Reduz o tamanho da logo */
+        width: 230px; /* Reduz o tamanho da logo */
     }
     
     /* --- Seção de Fotos (Empilhamento) --- */
