@@ -149,7 +149,7 @@ body {
     /* ================================================= */
 /* === MEDIA QUERY PARA CELULAR (Máx 767px) === */
 /* ================================================= */
-@media screen and (max-width: 800px) and (orientation: landscape) {
+@media screen and (max-width: 767px)  {
 
     /* --- Elementos Gerais --- */
     body {
@@ -195,7 +195,7 @@ body {
     .container-de-fotos {
         display: flex; 
         align-items: center; /* Centraliza as fotos */
-        gap: 8px;
+        gap: 5px;
         padding-bottom: 20px;
         justify-content: space-evenly;
     }
@@ -216,125 +216,4 @@ body {
     }
 }
 
-/* 1. ESTILOS PARA TABLETS (Modo Retrato: 768px a 1024px) */
-/* ------------------------------------------------------------------ */
-/* Aplica-se a telas que são maiores que 768px, mas menores ou iguais a 1024px. */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
 
-    /* --- Cabeçalho e Título --- */
-    header > h1 {
-        font-size: 65px; 
-        margin: 15px;
-    }
-
-    /* --- Navegação: Volta a ser lateral, mas mais espaçada --- */
-    nav {
-        flex-flow: row nowrap; 
-        justify-content: space-around;
-        padding: 5px;
-    }
-
-    nav > a {
-        font-size: 18px;
-        padding: 12px 20px;
-        margin: 5px; 
-        width: auto; /* Deixa os links mais estreitos, aproveitando a largura */
-    }
-
-    /* --- Seção Hero --- */
-    .hero {
-        height: 350px; /* Aumenta a altura para tablets */
-    }
-
-    .hero img {
-        width: 300px; 
-    }
-    
-    /* --- Seção de Fotos --- */
-    .photo-section {
-        padding: 20px 30px; 
-    }
-      
-    .container-de-fotos {
-        gap: 15px;
-        min-height: 180px; /* Aumenta um pouco a altura mínima */
-        justify-content: space-between; /* Melhor distribuição das fotos */
-    }
-
-    .photo-item {
-        width: 15%; 
-        max-width: 250px; 
-    }
-
-    /* --- Rodapé --- */
-    footer p {
-        font-size: 16px; 
-    }
-}
-
-
-/* ------------------------------------------------------------------ */
-/* 2. ESTILOS PARA DESKTOP (Min-width: 1025px e acima) */
-/* ------------------------------------------------------------------ */
-/* Esta é a base, deve ser o layout mais completo e espaçoso. */
-@media screen and (min-width: 1025px) {
-
-    /* --- Elementos Gerais --- */
-    body {
-        max-width: 1400px; /* Limita a largura geral do conteúdo */
-        margin: 0 auto;    /* Centraliza o conteúdo no desktop */
-    }
-
-    /* --- Cabeçalho e Título --- */
-    header > h1 {
-        font-size: 80px; 
-        margin: 20px;
-    }
-
-    /* --- Navegação --- */
-    nav {
-        flex-flow: row nowrap; 
-        justify-content: center;
-        padding: 10px;
-    }
-
-    nav > a {
-        font-size: 18px;
-        padding: 15px 30px;
-        margin: 0 10px; /* Mais separação lateral */
-        width: auto; 
-    }
-
-    /* --- Seção Hero --- */
-    .hero {
-        height: 450px; 
-    }
-
-    .hero img {
-        width: 350px; 
-    }
-    
-    /* --- Seção de Fotos --- */
-    .photo-section {
-        padding: 30px 50px; 
-    }
-      
-    .container-de-fotos {
-        gap: 20px;
-        min-height: 250px; 
-        justify-content: center; 
-    }
-
-    .photo-item {
-        width: 12%; /* Um pouco mais de largura para as fotos */
-        max-width: 300px; 
-    }
-
-    /* --- Rodapé --- */
-    footer p {
-        font-size: 16px; 
-        padding: 10px 0;
-    }
-}
- 
- 
