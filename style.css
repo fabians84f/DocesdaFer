@@ -149,7 +149,7 @@ body {
     /* ================================================= */
 /* === MEDIA QUERY PARA CELULAR (Máx 767px) === */
 /* ================================================= */
-@media screen and (max-width: 767px)  {
+@media screen and (max-width: 700px)  {
 
     /* --- Elementos Gerais --- */
     body {
@@ -159,8 +159,8 @@ body {
 
     /* --- Cabeçalho e Título --- */
     header > h1 {
-        font-size: 40px; /* Título menor para caber na tela */
-        margin: 12px;
+        font-size: 60px; /* Título menor para caber na tela */
+        margin: 20px;
     }
 
     /* --- Navegação --- */
