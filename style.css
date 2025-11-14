@@ -111,7 +111,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .photo-item {
@@ -128,7 +128,7 @@ body {
   padding: 10px 20px; /* reduz espaço interno */
   background-color: #f7d0eaa8;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 
@@ -140,36 +140,76 @@ body {
       background-color: #22e5f38c;
       color: rgb(22, 21, 21);
       text-align: center;
-      padding: 4px;
+      padding: 20px;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 15px;
       box-shadow: #000;
     }
 
-    /* Responsividade para celular */
-@media  (max-width: 700px) {
+    /* ================================================= */
+/* === MEDIA QUERY PARA CELULAR (Máx 767px) === */
+/* ================================================= */
+@media screen and (max-width: 767px) {
 
-  main {
-    height: 100%;
-  }
-  header > h1 {
-    font-size: 80px; /* Reduz título no celular */
-  }
+    /* --- Elementos Gerais --- */
+    body {
+        /* Garante que a rolagem seja da página, se necessário */
+        overflow-x: hidden; 
+    }
 
-  /* Deixa 3 fotos por linha */
-  .photo-grid {
-    justify-content: space-between;
-  }
+    /* --- Cabeçalho e Título --- */
+    header > h1 {
+        font-size: 40px; /* Título menor para caber na tela */
+        margin: 5px;
+    }
 
-  .photo-item {
-    width: calc(33.33% - 12px);
-    height:auto;
-    padding: 4px;
-    font-size: 10px;
-  }
+    /* --- Navegação --- */
+    nav {
+        display: flex;
+        flex-direction: column; /* Links um abaixo do outro */
+        padding: 5px;
+    }
 
-  footer {
-    font-size: 18px;
-  }
+    nav > a {
+        font-size: 16px;
+        padding: 10px 0; /* Mais espaço vertical entre links */
+        margin: 5px 0; /* Espaçamento entre os botões de navegação */
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    /* --- Seção Hero --- */
+    .hero {
+        height: 140px; /* Reduz a altura do banner */
+    }
+
+    .hero img {
+        width: 140px; /* Reduz o tamanho da logo */
+    }
+    
+    /* --- Seção de Fotos (Empilhamento) --- */
+    .photo-section {
+        padding: 10px 10px; /* Menos padding lateral */
+    }
+
+    .container-de-fotos {
+        flex-direction: column; /* Empilha as fotos verticalmente */
+        align-items: center; /* Centraliza as fotos */
+        gap: 15px;
+    }
+
+    .photo-item {
+        width: 80%; /* As fotos ocupam grande parte da largura da tela */
+        max-width: 300px; /* Limite máximo para não ficarem gigantes */
+        height: auto; /* Altura automática para manter proporção */
+    }
+
+    /* --- Rodapé --- */
+    footer p {
+        font-size: 13px; /* Reduz o texto do rodapé */
+        padding: 2px 5px;
+    }
 }
 
+ 
+ 
