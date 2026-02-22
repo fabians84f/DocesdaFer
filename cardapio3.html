@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - Doces da Fer</title>
+    <link rel="icon" type="image/png" href="imagens/Logo Doces da Fer com Brigadeiroredondo200.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fdf0f8;
+            color: #333;
+        }
+
+        /* ===== HEADER ===== */
+        .main-header {
+            background-color: #22e5f38c;
+            padding: 10px 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        .nav-link:hover { background-color: rgb(240, 167, 216); color: #fff; }
+
+        .logo-center { width: 80px; height: auto; }
+
+        /* ===== CARRINHO FLUTUANTE ===== */
+        #carrinho-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #f472b6, #ec4899);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 22px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(236,72,153,0.4);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        #carrinho-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(236,72,153,0.5);
+        }
+
+        #carrinho-count {
+            background: white;
+            color: #ec4899;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* ===== MODAL CARRINHO ===== */
+        #modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 300;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        #modal-overlay.ativo { display: flex; }
+
+        #modal-carrinho {
+            background: white;
+            width: 100%;
+            max-width: 520px;
+            max-height: 90vh;
+            border-radius: 24px 24px 0 0;
+            padding: 24px;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        #modal-carrinho h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+            color: #ec4899;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        #lista-carrinho { margin-bottom: 16px; }
+
+        .item-carrinho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f3e4ef;
+            gap: 8px;
+        }
+
+        .item-carrinho-nome { flex: 1; font-size: 14px; }
+
+        .item-carrinho-qtd {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .qtd-btn {
+            background: #f7d0ea;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            font-size: 18px;
+            cursor: pointer;
+            color: #ec4899;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .qtd-btn:hover { background: #ec4899; color: white; }
+
+        .item-carrinho-preco { font-weight: 600; color: #ec4899; min-width: 60px; text-align: right; }
+
+        #carrinho-vazio {
+            text-align: center;
+            color: #aaa;
+            padding: 30px 0;
+            font-size: 15px;
+        }
+
+        /* ===== ENDEREÇO & FRETE ===== */
+        .frete-section {
+            background: #fdf0f8;
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .frete-section h3 {
+            font-size: 15px;
+            color: #ec4899;
+            margin-bottom: 10px;
+        }
+
+        #campo-endereco {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #f7d0ea;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        #campo-endereco:focus { border-color: #ec4899; }
+
+        #campo-endereco.erro {
+            border-color: #e74c3c;
+            animation: shake 0.3s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
+        }
+
+        .aviso-endereco {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #e74c3c;
+            display: none;
+        }
+
+        .aviso-endereco.visivel { display: block; }
+
+        /* ===== TOTAIS ===== */
+        .totais {
+            border-top: 2px solid #f7d0ea;
+            padding-top: 14px;
+            margin-bottom: 16px;
+        }
+
+        .linha-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            margin-bottom: 6px;
+            color: #555;
+        }
+
+        .linha-total.grande {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ec4899;
+        }
+
+        /* ===== BOTÕES MODAL ===== */
+        #btn-whatsapp {
+            width: 100%;
+            padding: 14px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: opacity 0.2s;
+            margin-bottom: 10px;
+        }
+
+        #btn-whatsapp:hover { opacity: 0.9; }
+
+        #btn-fechar {
+            width: 100%;
+            padding: 12px;
+            background: #f3f4f6;
+            color: #666;
+            border: none;
+            border-radius: 14px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+        }
+
+        /* ===== CARDÁPIO ===== */
+        .cardapio-page { max-width: 1100px; margin: 0 auto; padding: 30px 20px 120px; }
+
+        .menu-section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 42px;
+            color: #ec4899;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .category-group { margin-bottom: 40px; }
+
+        .category-group h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 30px;
+            color: #c0397a;
+            margin-bottom: 16px;
+            padding-left: 4px;
+            border-left: 4px solid #f7d0ea;
+            padding-left: 12px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(236,72,153,0.1);
+            transition: transform 0.25s, box-shadow 0.25s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(236,72,153,0.2);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .menu-item-info {
+            padding: 10px;
+        }
+
+        .menu-item h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .menu-item .preco {
+            font-size: 14px;
+            font-weight: 700;
+            color: #ec4899;
+        }
+
+        .btn-adicionar {
+            width: 100%;
+            padding: 8px;
+            background: linear-gradient(135deg, #f7d0ea, #ec4899);
+            color: white;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn-adicionar:hover { opacity: 0.85; }
+
+        .badge-adicionado {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #ec4899;
+            color: white;
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* ===== FOOTER ===== */
+        .main-footer {
+            background-color: #22e5f38c;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 600px) {
+            .menu-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            #modal-carrinho { max-height: 85vh; }
+            .category-group h3 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <nav class="header-nav">
+        <a href="index.html" class="nav-link">← Início</a>
+        <div class="logo-container">
+            <img src="imagens/Logo Doces da Fer com Brigadeiroredondo200.png" alt="Logo Doces da Fer" class="logo-center">
+        </div>
+        <a href="https://wa.link/cm36fj" class="nav-link">Contato</a>
+    </nav>
+</header>
+
+<!-- BOTÃO CARRINHO FLUTUANTE -->
+<button id="carrinho-btn" onclick="abrirCarrinho()">
+    🛒 Carrinho
+    <span id="carrinho-count">0</span>
+</button>
+
+<!-- MODAL CARRINHO -->
+<div id="modal-overlay" onclick="fecharSeClicarFora(event)">
+    <div id="modal-carrinho">
+        <h2>🍬 Meu Pedido</h2>
+
+        <div id="lista-carrinho">
+            <div id="carrinho-vazio">Nenhum item ainda.<br>Escolha seus doces! 🍭</div>
+        </div>
+
+        <!-- ENDEREÇO -->
+        <div class="frete-section">
+            <h3>📍 Endereço para entrega <span style="color:#e74c3c">*</span></h3>
+            <input type="text" id="campo-endereco" placeholder="Ex: Rua das Flores, 123, Bairro">
+            <p class="aviso-endereco" id="aviso-endereco">⚠️ Por favor, informe seu endereço antes de enviar o pedido.</p>
+            <p style="font-size:12px; color:#aaa; margin-top:8px;">🛵 A taxa de entrega será calculada e informada pelo WhatsApp.</p>
+        </div>
+
+        <!-- TOTAIS -->
+        <div class="totais">
+            <div class="linha-total grande">
+                <span>Total dos produtos</span>
+                <span id="total-valor">R$ 0,00</span>
+            </div>
+            <div class="linha-total" style="font-size:12px; color:#aaa;">
+                <span>🛵 Taxa de entrega combinada pelo WhatsApp</span>
+            </div>
+        </div>
+
+        <button id="btn-whatsapp" onclick="enviarWhatsApp()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Enviar pedido pelo WhatsApp
+        </button>
+        <button id="btn-fechar" onclick="fecharCarrinho()">Fechar</button>
+    </div>
+</div>
+
+<!-- CARDÁPIO -->
+<main class="cardapio-page">
+    <section id="menu-completo" class="menu-section">
+        <h2>✨ Cardápio</h2>
+
+        <!-- BOLOS -->
+        <div class="category-group">
+            <h3>🎂 Bolos</h3>
+            <div class="menu-grid" id="grid-bolos">
+                <!-- itens gerados pelo JS -->
+            </div>
+        </div>
+
+        <!-- CONES -->
+        <div class="category-group">
+            <h3>🍦 Cones Trufados</h3>
+            <div class="menu-grid" id="grid-cones"></div>
+        </div>
+
+        <!-- TRUFAS -->
+        <div class="category-group">
+            <h3>🍫 Trufas</h3>
+            <div class="menu-grid" id="grid-trufas"></div>
+        </div>
+
+        <!-- SOBREMESAS -->
+        <div class="category-group">
+            <h3>🍓 Sobremesas</h3>
+            <div class="menu-grid" id="grid-sobremesas"></div>
+        </div>
+
+    </section>
+</main>
+
+<footer class="main-footer">
+    <p>📍 Curitiba, PR | 📞 (41) 99789-4596 | 📷 @Docesfer_</p>
+    <p>&copy; 2025 Doces da Fer. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+// ================================================
+// PRODUTOS
+// ================================================
+const produtos = {
+    bolos: {
+        preco: 10,
+        itens: [
+            { nome: "Prestígio com Morango", img: "imagens/boloprestigiomorango.jpg" },
+            { nome: "Prestígio", img: "imagens/boloprestigio.jpg" },
+            { nome: "Brigadeiro com Ninho", img: "imagens/bolobrigadeironinho.jpg" },
+            { nome: "Brigadeiro com Morango", img: "imagens/bolobrigadeiromorango.jpg" },
+            { nome: "Paçoca", img: "imagens/bolopaçoca.jpg" },
+            { nome: "Dois Amores com Morango", img: "imagens/bolo2amoresmorango.avif" },
+            { nome: "Dois Amores", img: "imagens/bolo2amore1.jpg" },
+            { nome: "Beijinho com Morango", img: "imagens/bolobeijinhomorango.jpg" },
+            { nome: "Beijinho", img: "imagens/bolobeijinho.jpg" },
+            { nome: "Morango", img: "imagens/bolomorango.jpg" },
+            { nome: "Ninho", img: "imagens/boloninho.jpg" },
+            { nome: "Ninho Morango", img: "imagens/boloninhomorango1.jpg" },
+        ]
+    },
+    cones: {
+        preco: 8,
+        itens: [
+            { nome: "Brigadeiro com Morango", img: "imagens/conebrigadeiromorango.jpg" },
+            { nome: "Brigadeiro", img: "imagens/conebrigadeiro.jpg" },
+            { nome: "Dois Amores com Morango", img: "imagens/cone2amoresmorango.jpg" },
+            { nome: "Beijinho", img: "imagens/conebeijinho.jpg" },
+            { nome: "Beijinho com Morango", img: "imagens/conebeijinhomorango.jpg" },
+            { nome: "Paçoca", img: "imagens/conedepaçoca.jpg" },
+            { nome: "Morango", img: "imagens/conedemorango.jpg" },
+            { nome: "Ninho", img: "imagens/coneninho.avif" },
+            { nome: "Ninho com Nutella", img: "imagens/coneninhonutella.jpg" },
+            { nome: "Ninho Nutella Morango", img: "imagens/coneninhomorangonutella.jpg" },
+            { nome: "Prestígio", img: "imagens/coneprestigio.jpg" },
+            { nome: "Uva", img: "imagens/coneuva.jpg" },
+        ]
+    },
+    trufas: {
+        preco: 4,
+        itens: [
+            { nome: "Morango", img: "imagens/trufamorango.jpg" },
+            { nome: "Dois Amores", img: "imagens/trufa2amores.jpg" },
+            { nome: "Ninho Nutella", img: "imagens/trufaninhonutella.jpg" },
+            { nome: "Castanha-do-Pará", img: "https://via.placeholder.com/300x200/F0E6D2/333333?text=Trufa+Castanha" },
+            { nome: "Maracujá", img: "https://via.placeholder.com/300x200/F0E6D2/333333?text=Trufa+Maracujá" },
+            { nome: "Beijinho", img: "https://via.placeholder.com/300x200/F0E6D2/333333?text=Trufa+Beijinho" },
+            { nome: "Leite Ninho", img: "https://via.placeholder.com/300x200/F0E6D2/333333?text=Trufa+Ninho" },
+            { nome: "Pistache", img: "https://via.placeholder.com/300x200/F0E6D2/333333?text=Trufa+Pistache" },
+            { nome: "Amendoim", img: "https://via.placeholder.com/300x200/F0E6D2/333333?text=Trufa+Amendoim" },
+            { nome: "Café", img: "https://via.placeholder.com/300x200/F0E6D2/333333?text=Trufa+Café" },
+            { nome: "Limão Siciliano", img: "https://via.placeholder.com/300x200/F0E6D2/333333?text=Trufa+Limão" },
+            { nome: "Doce de Leite", img: "https://via.placeholder.com/300x200/F0E6D2/333333?text=Trufa+Doce+de+Leite" },
+        ]
+    },
+    sobremesas: {
+        preco: 10,
+        itens: [
+            { nome: "Bombom aberto Brigadeiro Morango", img: "imagens/bombomabertobrigadeiromorango.jpg" },
+            { nome: "Bombom aberto Morango", img: "imagens/bombomabertodemorango.avif" },
+            { nome: "Bombom aberto Uva", img: "imagens/bombomabertouva.jpg" },
+            { nome: "Bombom aberto Ninho Morango", img: "imagens/bombomabertoninhomorango.jpg" },
+            { nome: "Potinho da TPM", img: "imagens/potinhotpm.avif" },
+            { nome: "Espetinho Morango", img: "imagens/espetinho.jpg" },
+        ]
+    }
+};
+
+// ================================================
+// CARRINHO
+// ================================================
+let carrinho = {};
+let enderecoCliente = "";
+
+function gerarId(nome, preco) {
+    return nome + "|" + preco;
+}
+
+function renderizarProdutos() {
+    const mapeamento = {
+        bolos: "grid-bolos",
+        cones: "grid-cones",
+        trufas: "grid-trufas",
+        sobremesas: "grid-sobremesas"
+    };
+
+    for (const cat in produtos) {
+        const grid = document.getElementById(mapeamento[cat]);
+        const { preco, itens } = produtos[cat];
+
+        itens.forEach(item => {
+            const id = gerarId(item.nome, preco);
+            const div = document.createElement("div");
+            div.className = "menu-item";
+            div.id = "item-" + btoa(unescape(encodeURIComponent(id))).replace(/=/g,'');
+            div.innerHTML = `
+                <span class="badge-adicionado" id="badge-${div.id}">0</span>
+                <img src="${item.img}" alt="${item.nome}" onerror="this.src='https://via.placeholder.com/300x200/F0E6D2/ec4899?text=Doces+da+Fer'">
+                <div class="menu-item-info">
+                    <h4>${item.nome}</h4>
+                    <p class="preco">R$ ${preco.toFixed(2).replace('.',',')}</p>
+                </div>
+                <button class="btn-adicionar" onclick="adicionarAoCarrinho('${id.replace(/'/g,"\\'")}', '${item.nome.replace(/'/g,"\\'")}', ${preco})">+ Adicionar</button>
+            `;
+            grid.appendChild(div);
+        });
+    }
+}
+
+function adicionarAoCarrinho(id, nome, preco) {
+    if (carrinho[id]) {
+        carrinho[id].qtd++;
+    } else {
+        carrinho[id] = { nome, preco, qtd: 1 };
+    }
+    atualizarBadgeItem(id);
+    atualizarCarrinho();
+}
+
+function removerDoCarrinho(id) {
+    if (!carrinho[id]) return;
+    carrinho[id].qtd--;
+    if (carrinho[id].qtd <= 0) {
+        delete carrinho[id];
+    }
+    atualizarBadgeItem(id);
+    atualizarCarrinho();
+}
+
+function atualizarBadgeItem(id) {
+    const safeId = "badge-item-" + btoa(unescape(encodeURIComponent(id))).replace(/=/g,'');
+    const badge = document.getElementById(safeId);
+    if (!badge) return;
+    const qtd = carrinho[id] ? carrinho[id].qtd : 0;
+    badge.style.display = qtd > 0 ? "flex" : "none";
+    badge.textContent = qtd;
+}
+
+function atualizarCarrinho() {
+    const lista = document.getElementById("lista-carrinho");
+    const ids = Object.keys(carrinho);
+    const countEl = document.getElementById("carrinho-count");
+
+    const totalItens = ids.reduce((acc, id) => acc + carrinho[id].qtd, 0);
+    countEl.textContent = totalItens;
+
+    if (ids.length === 0) {
+        lista.innerHTML = '<div id="carrinho-vazio">Nenhum item ainda.<br>Escolha seus doces! 🍭</div>';
+        atualizarTotais(0);
+        return;
+    }
+
+    lista.innerHTML = "";
+    let subtotal = 0;
+
+    ids.forEach(id => {
+        const item = carrinho[id];
+        const itemTotal = item.preco * item.qtd;
+        subtotal += itemTotal;
+
+        const div = document.createElement("div");
+        div.className = "item-carrinho";
+        div.innerHTML = `
+            <span class="item-carrinho-nome">${item.nome}</span>
+            <div class="item-carrinho-qtd">
+                <button class="qtd-btn" onclick="removerDoCarrinho('${id.replace(/'/g,"\\'")}')">−</button>
+                <span>${item.qtd}</span>
+                <button class="qtd-btn" onclick="adicionarAoCarrinho('${id.replace(/'/g,"\\'")}', '${item.nome.replace(/'/g,"\\'")}', ${item.preco})">+</button>
+            </div>
+            <span class="item-carrinho-preco">R$ ${itemTotal.toFixed(2).replace('.',',')}</span>
+        `;
+        lista.appendChild(div);
+    });
+
+    atualizarTotais(subtotal);
+}
+
+function atualizarTotais(subtotal) {
+    document.getElementById("total-valor").textContent = "R$ " + subtotal.toFixed(2).replace('.',',');
+}
+
+// ================================================
+// WHATSAPP
+// ================================================
+const WHATSAPP_NUMERO = "5541997894596";
+
+function enviarWhatsApp() {
+    const ids = Object.keys(carrinho);
+    const endereco = document.getElementById("campo-endereco").value.trim();
+    const avisoEndereco = document.getElementById("aviso-endereco");
+    const campoEndereco = document.getElementById("campo-endereco");
+
+    if (ids.length === 0) {
+        alert("🛒 Seu carrinho está vazio! Adicione produtos primeiro.");
+        return;
+    }
+
+    // Endereço obrigatório
+    if (!endereco) {
+        campoEndereco.classList.add("erro");
+        avisoEndereco.classList.add("visivel");
+        campoEndereco.focus();
+        setTimeout(() => campoEndereco.classList.remove("erro"), 500);
+        return;
+    }
+
+    avisoEndereco.classList.remove("visivel");
+    enderecoCliente = endereco;
+
+    let mensagem = "Olá Fer! Gostaria de fazer um pedido: 🍬\n\n";
+
+    ids.forEach(id => {
+        const item = carrinho[id];
+        const itemTotal = (item.preco * item.qtd).toFixed(2).replace('.', ',');
+        mensagem += `• ${item.qtd}x ${item.nome} — R$ ${itemTotal}\n`;
+    });
+
+    const subtotal = Object.values(carrinho).reduce((acc, i) => acc + i.preco * i.qtd, 0);
+    mensagem += `\n💰 Total dos produtos: R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+    mensagem += `\n\n📍 Endereço de entrega: ${enderecoCliente}, Curitiba - PR`;
+    mensagem += `\n\n🛵 Aguardo a taxa de entrega!`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+}
+
+// Limpa erro ao digitar no campo
+document.getElementById("campo-endereco").addEventListener("input", function() {
+    this.classList.remove("erro");
+    document.getElementById("aviso-endereco").classList.remove("visivel");
+});
+
+// ================================================
+// MODAL
+// ================================================
+function abrirCarrinho() {
+    document.getElementById("modal-overlay").classList.add("ativo");
+    document.body.style.overflow = "hidden";
+}
+
+function fecharCarrinho() {
+    document.getElementById("modal-overlay").classList.remove("ativo");
+    document.body.style.overflow = "";
+}
+
+function fecharSeClicarFora(e) {
+    if (e.target === document.getElementById("modal-overlay")) fecharCarrinho();
+}
+
+// ================================================
+// INIT
+// ================================================
+renderizarProdutos();
+</script>
+
+</body>
+</html>
