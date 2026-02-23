@@ -324,6 +324,7 @@
             height: 130px;
             object-fit: cover;
             display: block;
+            object-position: center;
         }
 
         .menu-item-info {
@@ -345,12 +346,12 @@
 
         .btn-adicionar {
             width: 100%;
-            padding: 8px;
-            background: linear-gradient(135deg, #f7d0ea, #ec4899);
-            color: white;
+            padding: 15px;
+            background: linear-gradient(135deg, #e751b5, #f51d89);
+            color: rgb(245, 241, 244);
             border: none;
             font-family: 'Poppins', sans-serif;
-            font-size: 13px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: opacity 0.2s;
@@ -399,7 +400,7 @@
         <div class="logo-container">
             <img src="imagens/Logo Doces da Fer com Brigadeiroredondo200.png" alt="Logo Doces da Fer" class="logo-center">
         </div>
-        <a href="https://wa.link/cm36fj" class="nav-link">Contato</a>
+        <a href="cardapio2.html" class="nav-link">Contato</a>
     </nav>
 </header>
 
@@ -491,15 +492,16 @@
 const produtos = {
     bolos: {
         preco: 10,
+        categoria: "Bolo",
         itens: [
-            { nome: "Prestígio com Morango", img: "imagens/boloprestigiomorango.jpg" },
+            { nome: "Prestígio Morango", img: "imagens/boloprestigiomorango.jpg" },
             { nome: "Prestígio", img: "imagens/boloprestigio.jpg" },
-            { nome: "Brigadeiro com Ninho", img: "imagens/bolobrigadeironinho.jpg" },
-            { nome: "Brigadeiro com Morango", img: "imagens/bolobrigadeiromorango.jpg" },
+            { nome: "Brigadeiro Ninho", img: "imagens/bolobrigadeironinho.jpg" },
+            { nome: "Brigadeiro Morango", img: "imagens/bolobrigadeiromorango.jpg" },
             { nome: "Paçoca", img: "imagens/bolopaçoca.jpg" },
-            { nome: "Dois Amores com Morango", img: "imagens/bolo2amoresmorango.avif" },
+            { nome: "Dois Amores Morango", img: "imagens/bolo2amoresmorango.avif" },
             { nome: "Dois Amores", img: "imagens/bolo2amore1.jpg" },
-            { nome: "Beijinho com Morango", img: "imagens/bolobeijinhomorango.jpg" },
+            { nome: "Beijinho Morango", img: "imagens/bolobeijinhomorango.jpg" },
             { nome: "Beijinho", img: "imagens/bolobeijinho.jpg" },
             { nome: "Morango", img: "imagens/bolomorango.jpg" },
             { nome: "Ninho", img: "imagens/boloninho.jpg" },
@@ -508,16 +510,17 @@ const produtos = {
     },
     cones: {
         preco: 8,
+        categoria: "Cone Trufado",
         itens: [
-            { nome: "Brigadeiro com Morango", img: "imagens/conebrigadeiromorango.jpg" },
+            { nome: "Brigadeiro Morango", img: "imagens/conebrigadeiromorango.jpg" },
             { nome: "Brigadeiro", img: "imagens/conebrigadeiro.jpg" },
-            { nome: "Dois Amores com Morango", img: "imagens/cone2amoresmorango.jpg" },
+            { nome: "Dois Amores Morango", img: "imagens/cone2amoresmorango.jpg" },
             { nome: "Beijinho", img: "imagens/conebeijinho.jpg" },
-            { nome: "Beijinho com Morango", img: "imagens/conebeijinhomorango.jpg" },
+            { nome: "Beijinho Morango", img: "imagens/conebeijinhomorango.jpg" },
             { nome: "Paçoca", img: "imagens/conedepaçoca.jpg" },
             { nome: "Morango", img: "imagens/conedemorango.jpg" },
             { nome: "Ninho", img: "imagens/coneninho.avif" },
-            { nome: "Ninho com Nutella", img: "imagens/coneninhonutella.jpg" },
+            { nome: "Ninho Nutella", img: "imagens/coneninhonutella.jpg" },
             { nome: "Ninho Nutella Morango", img: "imagens/coneninhomorangonutella.jpg" },
             { nome: "Prestígio", img: "imagens/coneprestigio.jpg" },
             { nome: "Uva", img: "imagens/coneuva.jpg" },
@@ -525,9 +528,10 @@ const produtos = {
     },
     trufas: {
         preco: 4,
+        categoria: "Trufa",
         itens: [
-            { nome: "Beijinho com Morango", img: "imagens/trufabeijinhomorango.jpg" },
-            { nome: "Brigadeiro com Morango", img: "imagens/trufabrigadeiromorango.jpg" },
+            { nome: "Beijinho Morango", img: "imagens/trufabeijinhomoorango.jpg" },
+            { nome: "Brigadeiro Morango", img: "imagens/trufabrigadeiromorango.jpg" },
             { nome: "Morango", img: "imagens/trufamorango.jpg" },
             { nome: "Ninho", img: "imagens/trufaninho.jpg" },
             { nome: "Ninho Nutella", img: "imagens/trufaninhonutella.jpg" },
@@ -535,10 +539,14 @@ const produtos = {
             { nome: "Paçoca", img: "imagens/trufapaçoca.jpg" },
             { nome: "Prestígio", img: "imagens/trufaprestigio.jpg" },
             { nome: "Uva", img: "imagens/trufauva.jpg" },
+            { nome: "Dois Amores", img: "imagens/trufa2amores.jpg"},
+            { nome: "Beijinho", img: "imagens/trufabeijinho.avif"},
+            { nome: "Brigadeiro", img: "imagens/trufabrigadeiro.jpg"},
         ]
     },
     sobremesas: {
         preco: 10,
+        categoria: "Sobremesa",
         itens: [
             { nome: "Bombom aberto Brigadeiro Morango", img: "imagens/bombomabertobrigadeiromorango.jpg" },
             { nome: "Bombom aberto Morango", img: "imagens/bombomabertodemorango.avif" },
@@ -579,23 +587,23 @@ function renderizarProdutos() {
             div.id = "item-" + btoa(unescape(encodeURIComponent(id))).replace(/=/g,'');
             div.innerHTML = `
                 <span class="badge-adicionado" id="badge-${div.id}">0</span>
-                <img src="${item.img}" alt="${item.nome}" onerror="this.src='https://via.placeholder.com/300x200/F0E6D2/ec4899?text=Doces+da+Fer'">
+                <img src="${item.img}" alt="${item.nome}" onerror="this.src='https://placehold.co/300x200/F0E6D2/ec4899?text=Doces+da+Fer'">
                 <div class="menu-item-info">
                     <h4>${item.nome}</h4>
                     <p class="preco">R$ ${preco.toFixed(2).replace('.',',')}</p>
                 </div>
-                <button class="btn-adicionar" onclick="adicionarAoCarrinho('${id.replace(/'/g,"\\'")}', '${item.nome.replace(/'/g,"\\'")}', ${preco})">+ Adicionar</button>
+                <button class="btn-adicionar" onclick="adicionarAoCarrinho('${id.replace(/'/g,"\\'")}', '${item.nome.replace(/'/g,"\\'")}', ${preco}, '${produtos[cat].categoria}')">+ Adicionar</button>
             `;
             grid.appendChild(div);
         });
     }
 }
 
-function adicionarAoCarrinho(id, nome, preco) {
+function adicionarAoCarrinho(id, nome, preco, categoria) {
     if (carrinho[id]) {
         carrinho[id].qtd++;
     } else {
-        carrinho[id] = { nome, preco, qtd: 1 };
+        carrinho[id] = { nome, preco, qtd: 1, categoria };
     }
     atualizarBadgeItem(id);
     atualizarCarrinho();
@@ -696,7 +704,7 @@ function enviarWhatsApp() {
     ids.forEach(id => {
         const item = carrinho[id];
         const itemTotal = (item.preco * item.qtd).toFixed(2).replace('.', ',');
-        mensagem += `• ${item.qtd}x ${item.nome} — R$ ${itemTotal}\n`;
+        mensagem += `• ${item.qtd}x ${item.categoria} ${item.nome} — R$ ${itemTotal}\n`;
     });
 
     const subtotal = Object.values(carrinho).reduce((acc, i) => acc + i.preco * i.qtd, 0);
