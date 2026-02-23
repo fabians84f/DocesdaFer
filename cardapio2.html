@@ -312,6 +312,8 @@
             transition: transform 0.25s, box-shadow 0.25s;
             cursor: pointer;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .menu-item:hover {
@@ -324,11 +326,12 @@
             height: 130px;
             object-fit: cover;
             display: block;
-            object-position: center;
+            object-position: center 10%;
         }
 
         .menu-item-info {
             padding: 10px;
+            flex: 1;
         }
 
         .menu-item h4 {
@@ -357,14 +360,14 @@
             transition: opacity 0.2s;
         }
 
-        .btn-adicionar:hover { opacity: 0.85; }
+        .btn-adicionar:hover { opacity: 0.70; }
 
         .badge-adicionado {
             position: absolute;
             top: 8px;
             right: 8px;
-            background: #ec4899;
-            color: white;
+            background: #f00f7f;
+            color: rgb(232, 92, 236);
             border-radius: 50%;
             width: 26px;
             height: 26px;
@@ -491,7 +494,7 @@
 // ================================================
 const produtos = {
     bolos: {
-        preco: 10,
+        preco: 11,
         categoria: "Bolo",
         itens: [
             { nome: "Prestígio Morango", img: "imagens/boloprestigiomorango.jpg" },
@@ -527,7 +530,7 @@ const produtos = {
         ]
     },
     trufas: {
-        preco: 4,
+        preco: 4.50,
         categoria: "Trufa",
         itens: [
             { nome: "Beijinho Morango", img: "imagens/trufabeijinhomoorango.jpg" },
@@ -541,11 +544,11 @@ const produtos = {
             { nome: "Uva", img: "imagens/trufauva.jpg" },
             { nome: "Dois Amores", img: "imagens/trufa2amores.jpg"},
             { nome: "Beijinho", img: "imagens/trufabeijinho.avif"},
-            { nome: "Brigadeiro", img: "imagens/trufabrigadeiro.jpg"},
+            { nome: "Brigadeiro", img: "imagens/trufabr.jpg.jpeg"},
         ]
     },
     sobremesas: {
-        preco: 10,
+        preco: 9.50,
         categoria: "Sobremesa",
         itens: [
             { nome: "Bombom aberto Brigadeiro Morango", img: "imagens/bombomabertobrigadeiromorango.jpg" },
@@ -553,7 +556,7 @@ const produtos = {
             { nome: "Bombom aberto Uva", img: "imagens/bombomabertouva.jpg" },
             { nome: "Bombom aberto Ninho Morango", img: "imagens/bombomabertoninhomorango.jpg" },
             { nome: "Potinho da TPM", img: "imagens/potinhotpm.avif" },
-            { nome: "Espetinho Morango", img: "imagens/espetinho.jpg" },
+            { nome: "Espetinho Morango", img: "imagens/espetinho2.jpg.jpeg" },
         ]
     }
 };
